@@ -1,0 +1,65 @@
+html {
+  body {
+    display: flex;
+    flex-direction: column;
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+
+      h1,
+      p {
+        flex-basis: 100%;
+        text-align: center;
+      }
+    }
+
+    main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .Categories {
+        flex-grow: 1;
+
+        button {
+          background: black;
+          color: white;
+          font-size: 30px;
+          margin: 0 10px;
+
+          &.active {
+            background: grey;
+          }
+        }
+      }
+
+      .Projects {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+
+        & > .Project {
+          width: 33%;
+          height: 400px;
+          background-repeat: no-repeat;
+          background-size: cover;
+
+          h2 {
+            display: none;
+          }
+
+          &:hover {
+            h2 {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
