@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import ProjectPage from "./ProjectPage";
 import { ProjectEntry } from "./types";
 
 const Project: React.FC<{
@@ -17,7 +16,7 @@ const Project: React.FC<{
     <div
       className="Project"
       style={{
-        backgroundImage: `url(${project.fields.coverImage.fields.file.url})`,
+        backgroundImage: `url(https://${project.fields.coverImage.fields.file.url})`,
       }}
     >
       <Link to={`/project/${projectIndex}`}>
