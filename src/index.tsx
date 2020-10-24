@@ -1,11 +1,12 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import * as contentful from "contentful";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ProjectPage from "./ProjectPage";
 import { ProjectEntry, PortfolioPageEntry } from "./types";
 import Projects from "./Projects";
 import Contact from "./Contact";
+
 const client = contentful.createClient({
   space: "slf1pxre7bzy",
   accessToken: "gEYhz1IthRLAMD8-86v7xaoOsTCIYLRJPe7gvcxPgZQ",
@@ -30,6 +31,7 @@ const parseCategories = (projects: ProjectEntry[]) =>
 const App = () => {
   const [projects, setProjects] = React.useState<ProjectEntry[]>([]);
   const [categories, setCategories] = React.useState<string[]>([]);
+
   const fetchContent = async () => {
     const entry = await client.getEntry<PortfolioPageEntry>(
       PORTFOLIO_PAGE_ENTRY_ID,
@@ -48,6 +50,9 @@ const App = () => {
   if (projects.length) {
     return (
       <Router>
+        <Link to="/contact">
+          <div className="contactMe">Say Hi!</div>
+        </Link>
         <Switch>
           {projects.map((project, idx) => (
             <Route path={`/project/${idx}`} key={idx}>

@@ -3,6 +3,18 @@
 html {
   font-family: "Open Sans", sans-serif;
 
+  a {
+    color: unset;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: unset;
+      text-decoration: none;
+    }
+  }
+
   body {
     display: flex;
     flex-direction: column;
@@ -23,12 +35,22 @@ html {
         font-family: "Pacifico", cursive;
         font-size: 8rem;
         line-height: 1;
+        font-size: 5rem;
+
+        @media screen and (min-width: 56.25rem) {
+          font-size: 8rem;
+        }
       }
 
-      .tagline {
+      p.tagline {
         font-weight: 700;
-        font-size: 1.8rem !important;
+        font-size: 1.25rem;
         margin-bottom: 3rem;
+
+
+        @media screen and (min-width: 56.25rem) {
+          font-size: 1.8rem;
+        }
       }
     }
 
@@ -39,6 +61,34 @@ html {
       align-items: center;
       justify-content: center;
       flex-direction: column;
+
+      .contactMe {
+        background: url(./badge.svg) no-repeat;
+        background-size: cover;
+        position: fixed;
+        height: 12rem;
+        width: 12rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(20deg);
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.3s;
+        bottom: 2rem;
+        right: 2rem;
+        color: white;
+        font-size: 2rem;
+
+        @media screen and (min-width: 56.25rem) {
+          top: 2rem;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+          transform: rotate(10deg);
+        }
+      }
 
       .Categories {
         flex-grow: 1;
@@ -90,6 +140,7 @@ html {
 
       .copyright {
         margin-top: 3rem;
+        font-weight: 700;
       }
 
       .Projects {
@@ -129,6 +180,41 @@ html {
             h2 {
               display: block;
             }
+          }
+        }
+      }
+
+      .Contact {
+        .EmailForm {
+          display: flex;
+          flex-direction: column;
+
+          >* {
+            margin: 1rem;
+          }
+
+          >label {
+            font-weight: 700;
+            font-size: 1.25rem;
+          }
+
+          >input,
+          >textarea {
+            padding: 1rem;
+            border: solid black 0.25rem;
+            font-size: 1.6rem;
+            width: calc(100% - 2rem);
+          }
+
+
+          >button {
+            padding: 1rem;
+            font-size: 1.5rem;
+            background: black;
+            color: white;
+            font-weight: 700;
+            border: solid black 0.15rem;
+            cursor: pointer;
           }
         }
       }
