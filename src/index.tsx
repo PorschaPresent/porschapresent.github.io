@@ -50,6 +50,9 @@ const App = () => {
             <Projects projects={projects} categories={categories} />
           </Route>
         </Switch>
+        <span className="copyright">
+          ©PorschaPresent - {new Date().getFullYear()}
+        </span>
       </Router>
     );
   } else {
