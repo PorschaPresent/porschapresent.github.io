@@ -15,7 +15,16 @@ const PORTFOLIO_PAGE_ENTRY_ID = "qwKqDIZYftif6nB9MuUFo";
 
 const parseCategories = (projects: ProjectEntry[]) =>
   Array.from(
-    new Set(projects.map((project: ProjectEntry) => project.fields.category))
+    new Set(
+      projects.reduce(
+        (col, project: ProjectEntry) => [
+          ...col,
+          ...(project.fields.categories || []),
+          project.fields.category,
+        ],
+        []
+      )
+    )
   );
 
 const App = () => {
@@ -41,7 +50,7 @@ const App = () => {
       <Router>
         <Switch>
           {projects.map((project, idx) => (
-            <Route path={`/project/${idx}`}>
+            <Route path={`/project/${idx}`} key={idx}>
               <ProjectPage project={project} />
             </Route>
           ))}

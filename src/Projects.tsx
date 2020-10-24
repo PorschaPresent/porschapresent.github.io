@@ -34,8 +34,9 @@ const Projects: React.FC<{
   return (
     <>
       <div className="Categories">
-        {categories.map((category) => (
+        {categories.map((category, idx) => (
           <button
+            key={idx}
             className={activeFilters.includes(category) ? "active" : ""}
             onClick={() =>
               activeFilters.includes(category)
@@ -51,6 +52,9 @@ const Projects: React.FC<{
       <div className="Projects">
         {projects.map((project: ProjectEntry, idx: number) =>
           activeFilters.includes(project.fields.category) ||
+          (project.fields.categories || []).find((c) =>
+            activeFilters.includes(c)
+          ) ||
           activeFilters.length === 0 ? (
             <React.Fragment key={idx}>
               <Project project={project} projectIndex={idx} />
