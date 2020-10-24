@@ -76,6 +76,7 @@ html {
 
         img {
           max-width: 100%;
+          width: 100%;
         }
 
         &__Description {
@@ -107,6 +108,7 @@ html {
           margin: 1rem;
           font-weight: 600;
           position: relative;
+          background-position: center;
 
           @media screen and (min-width: 56.25rem) {
             width: calc(33% - 2rem);

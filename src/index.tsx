@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProjectPage from "./ProjectPage";
 import { ProjectEntry, PortfolioPageEntry } from "./types";
 import Projects from "./Projects";
-
+import Contact from "./Contact";
 const client = contentful.createClient({
   space: "slf1pxre7bzy",
   accessToken: "gEYhz1IthRLAMD8-86v7xaoOsTCIYLRJPe7gvcxPgZQ",
@@ -54,7 +54,9 @@ const App = () => {
               <ProjectPage project={project} />
             </Route>
           ))}
-
+          <Route path="/contact">
+            <Contact />
+          </Route>
           <Route exact path="/">
             <Projects projects={projects} categories={categories} />
           </Route>
