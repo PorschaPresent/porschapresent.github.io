@@ -20,7 +20,9 @@ const Project: React.FC<{
       }}
     >
       <Link to={`/project/${projectIndex}`}>
-        <h2>{project.fields.title}</h2>
+        <div className="Project__overlay">
+          <h2>{project.fields.title}</h2>
+        </div>
       </Link>
     </div>
   );

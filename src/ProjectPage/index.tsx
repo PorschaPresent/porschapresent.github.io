@@ -3,9 +3,10 @@ import {
   documentToReactComponents,
   NodeRenderer,
 } from "@contentful/rich-text-react-renderer";
-import { Document, BLOCKS, INLINES } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 
-import { ProjectEntry } from "./types";
+import { ProjectEntry } from "../types";
+import renderEmbeddedEntry from './ProjectDescriptionEmbeds';
 
 const renderAsset: NodeRenderer = (asset) => {
   return (
@@ -15,6 +16,7 @@ const renderAsset: NodeRenderer = (asset) => {
     />
   );
 };
+
 
 const ProjectPage: React.FC<{ project: ProjectEntry }> = ({
   project,
@@ -30,6 +32,7 @@ const ProjectPage: React.FC<{ project: ProjectEntry }> = ({
         {documentToReactComponents(project.fields.description, {
           renderNode: {
             [BLOCKS.EMBEDDED_ASSET]: renderAsset,
+            [INLINES.EMBEDDED_ENTRY]: renderEmbeddedEntry
           },
         })}
       </div>
