@@ -12,3 +12,19 @@ export type ProjectEntry = contentful.Entry<{
 export type PortfolioPageEntry = contentful.Entry<{
   project: contentful.Entry<ProjectEntry>[];
 }>;
+
+export type SiteEntry = contentful.Entry<{
+  title: contentful.EntryFields.Text;
+  links: Array<InfoPageEntry | SocialLinkEntry>;
+}>;
+
+export type InfoPageEntry = contentful.Entry<{
+  projects: ProjectEntry[];
+  title: contentful.EntryFields.Text;
+  bio: contentful.EntryFields.RichText;
+}>;
+
+export type SocialLinkEntry = contentful.Entry<{
+  type: contentful.EntryFields.Text;
+  url: contentful.EntryFields.Text;
+}>;
