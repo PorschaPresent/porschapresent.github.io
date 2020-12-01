@@ -1,11 +1,11 @@
 import * as React from "react";
-import EmailForm from "./EmailForm";
+import EmailForm from "./components/EmailForm";
 
 const Contact: React.FC = () => {
   return (
-    <div className="Contact">
+    <main className="Contact">
       <EmailForm />
-    </div>
+    </main>
   );
 };
 

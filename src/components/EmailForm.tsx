@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import "./EmailForm.scss";
+
 export default class MyForm extends React.Component {
   constructor(props) {
     super(props);
@@ -16,14 +18,16 @@ export default class MyForm extends React.Component {
         onSubmit={this.submitForm}
         action="https://formspree.io/f/xqkgqnad"
         method="POST"
-        className="EmailForm"
       >
         <label>What's your email address?:</label>
         <input type="email" name="email" required />
         <label>Give me a lovely message, and i'll get back to you:</label>
-        <textarea type="text" rows="5" name="message" required />
-
-        {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
+        <textarea rows={5} name="message" required />
+        {status === "SUCCESS" ? (
+          <p>Thanks! I'll be in touch soon...</p>
+        ) : (
+          <button>Submit</button>
+        )}
         {status === "ERROR" && <p>Ooops! There was an error.</p>}
       </form>
     );

@@ -1,0 +1,22 @@
+header {
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+  align-items: center;
+
+  img {
+    width: 90%;
+  }
+
+  h1 {
+    font-family: "Pacifico", cursive;
+    color: #6f4544;
+    font-size: 3rem;
+    margin-top: -4rem;
+
+    @media (min-width: 50rem) {
+      font-size: 6rem;
+      margin-top: -8rem;
+    }
+  }
+}

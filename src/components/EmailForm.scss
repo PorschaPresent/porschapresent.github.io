@@ -1,0 +1,34 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-size: 1.2rem;
+    font-family: "Permanent Marker", sans;
+  }
+
+  input,
+  textarea,
+  button {
+    margin: 1rem 0;
+    background: none;
+    border: 3px solid black;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    font-family: "Permanent Marker", sans;
+  }
+
+  button {
+    font-size: 1.2rem;
+    font-family: "Permanent Marker", sans;
+    cursor: pointer;
+
+    &:hover {
+      background: white;
+    }
+  }
+}

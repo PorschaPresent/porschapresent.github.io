@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  @media (min-width: 31.25rem) {
+    flex-direction: row;
+  }
+
+  a {
+    font-family: "Permanent Marker", sans;
+    text-decoration: underline;
+    font-size: 1.3rem;
+
+    @media (min-width: 50rem) {
+      font-size: 2rem;
+    }
+  }
+}
